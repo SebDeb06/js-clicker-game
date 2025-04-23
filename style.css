@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: grid;
+  grid-template-rows: 75px auto 50px;
+  min-height: 100vh;
+}
+
+header{
+  background-color: rgb(255, 255, 255);
+}
+
+.logo-button-style{
+  width: 75px;
+  height: 75px;
+  border: none;
+  margin-left: 10px;
+  background-image: url(img/ClickerLogo2.png);
+  background-size: cover;
+  background-color: white;
+}
+
+.logo-button-style:hover{
+  transform: scale(102.5%);
+  transition: 0.25s;
+}
+
+.header-left{
+  width: 50%;
+}
+
+.header-right{
+  width: 50%;
+}
+
+main{
+  background-color: darkblue;
+}
+
+footer{
+  background-color: white;
+}

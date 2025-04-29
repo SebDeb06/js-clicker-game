@@ -83,7 +83,15 @@ main{
   border: none;
 }
 
+.ClickButton:hover{
+  transform: scale(105%);
+  transition: .25s;
+}
 
+.ClickButton:not(:hover){
+  transform: scale(100%);
+  transition: .25s;
+}
 
 .right-panel{
   background-color: brown;

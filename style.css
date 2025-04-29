@@ -8,7 +8,7 @@
 
 body{
   display: grid;
-  grid-template-rows: 75px auto 50px;
+  grid-template-rows: 77.5px auto 50px;
   min-height: 100vh;
 }
 
@@ -31,8 +31,16 @@ header{
   transition: 0.25s;
 }
 
+.logo-button-style:not(:hover){
+  transform: scale(100%);
+  transition: 0.25s;
+}
+
 .header-left{
   width: 50%;
+  display: flex;
+  justify-content: left;
+  align-content: center;
 }
 
 .header-right{
@@ -40,9 +48,23 @@ header{
 }
 
 main{
+  background-color: ghostwhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.template-wrapper{
+  width: 75vw;
+  height: 75vh;
   background-color: darkblue;
 }
 
 footer{
   background-color: white;
+  display: flex;
+  font-size: small;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: center;
 }

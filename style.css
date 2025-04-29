@@ -28,11 +28,13 @@ header{
 
 .logo-button-style:hover{
   transform: scale(102.5%);
+  transform: rotate(-10deg);
   transition: 0.25s;
 }
 
 .logo-button-style:not(:hover){
   transform: scale(100%);
+  transform: rotate(0deg);
   transition: 0.25s;
 }
 
@@ -58,6 +60,33 @@ main{
   width: 75vw;
   height: 75vh;
   background-color: darkblue;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.left-panel{
+  background-color: gainsboro;
+}
+
+.center-panel{
+  background-color: khaki;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ClickButton{
+  background-image: url(img/moneybag.png);
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+  border: none;
+}
+
+
+
+.right-panel{
+  background-color: brown;
 }
 
 footer{

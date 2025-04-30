@@ -66,6 +66,24 @@ main{
 
 .left-panel{
   background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upgrades-wrapper{
+  width: 90%;
+  height: 95%;
+  background-color: darkblue;
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.upgrade-style{
+  width: 95%;
+  height: 90px;
 }
 
 .center-panel{
@@ -75,7 +93,13 @@ main{
 }
 
 .top-center-panel{
-  background-color: goldenrod;
+  display: grid;
+  grid-template-rows: 75px 0px;
+  margin-top: 150px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .middle-center-panel{

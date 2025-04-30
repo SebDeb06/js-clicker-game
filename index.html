@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Clicker Game</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,7 +22,16 @@
 
             </div>
             <div class="center-panel">
-                <button id="ClickButton" class="ClickButton"></button>
+                <div class="top-center-panel">
+                    <h2>Game</h2>
+                    <p id="valueIndicator">Points: </p>
+                </div>
+                <div class="middle-center-panel">
+                    <button id="ClickButton" class="ClickButton"></button>
+                </div>
+                <div class="bottom-center-panel">
+
+                </div>
             </div>
             <div class="right-panel">
     

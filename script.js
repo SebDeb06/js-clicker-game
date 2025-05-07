@@ -1,9 +1,11 @@
 const clickButton = document.getElementById("ClickButton");
 const valueIndicator = document.getElementById("valueIndicator");
 
+const clickToEarn = document.getElementById("clickToEarn");
+
 let starterValue = 0;
 
-const upgrade1 = document.getElementById("upgrade1")
+const upgrade1 = document.getElementById("upgrade1");
 
 if(starterValue == 10){
 

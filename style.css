@@ -88,18 +88,22 @@ main{
   border: solid black;
   border-radius: 10px;
   display: grid;
-  justify-content: center;
+  text-align: center;
+  grid-template-rows: 25% 25% auto;
   align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.upgrade-style:hover{
-  transform: scale(102.5%);
-  transition: 0.25s;
-}
-
-.upgrade-style:not(:hover){
-  transform: scale(100%);
-  transition: 0.25s;
+.purchaseButton{
+  background-color: rgb(0, 255, 0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: 600;
+  width: 90%;
+  margin-left: 5%;
+  height: 85%;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .center-panel{
@@ -132,6 +136,7 @@ main{
   width: 250px;
   height: 250px;
   border: none;
+  cursor: pointer;
 }
 
 .ClickButton:hover{

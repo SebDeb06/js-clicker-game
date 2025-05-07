@@ -17,8 +17,8 @@ header{
 }
 
 .logo-button-style{
-  width: 75px;
-  height: 75px;
+  width: 72.5px;
+  height: 72.5px;
   border: none;
   margin-left: 10px;
   background-image: url(img/ClickerLogo2.png);
@@ -87,6 +87,9 @@ main{
   background-color: grey;
   border: solid black;
   border-radius: 10px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .upgrade-style:hover{

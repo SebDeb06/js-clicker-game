@@ -1,11 +1,16 @@
+// Foundation consts
 const clickButton = document.getElementById("ClickButton");
 const valueIndicator = document.getElementById("valueIndicator");
 
+// Get point button
 const clickToEarn = document.getElementById("clickToEarn");
 
-let starterValue = 0;
+// Upgrades
+const moreClicksButton = document.getElementById("moreClicksPurchase");
+const moreClicksPrice = document.getElementById("moreClicksPrice");
+const moreClicks = document.getElementById("moreClicks");
 
-const upgrade1 = document.getElementById("upgrade1");
+let starterValue = 0;
 
 if(starterValue == 10){
 

@@ -11,6 +11,7 @@ const moreClicksPrice = document.getElementById("moreClicksPrice");
 const moreClicks = document.getElementById("moreClicks");
 
 let starterValue = 0;
+let multiplier = 1;
 
 let clickAmount = 1;
 
@@ -19,7 +20,7 @@ if(starterValue == 10){
 }
 
 function GetPoint(){
-    starterValue += clickAmount
+    starterValue += clickAmount * multiplier
     valueIndicator.innerText = "Points: " + starterValue
 }
 
@@ -28,8 +29,8 @@ clickButton.addEventListener("click", GetPoint)
 let clicksPrice = 10;
 
 function upgradeClicks(){
-    if(starterValue == clicksPrice){
-        clickAmount += 0.25;
+    if(starterValue >= clicksPrice){
+        multiplier += 0.25;
         starterValue = starterValue - clicksPrice
         clicksPrice = clicksPrice *= 2.5;
         moreClicksPrice.innerText = "Price: " + clicksPrice;

@@ -54,11 +54,16 @@ function purchaseAutoPoints(){
         buyAutoPoints.style.display = "none";
         if(autoPointIsPurchased == true){
             autoPoints.addEventListener("click", autoPointsED)
+            autoPoints.style.display = "inherit";
         }
     }
     else{
         console.log("Cannot purchase auto points, not enough balance!")
     }
+}
+
+if(autoPointIsPurchased == false){
+    autoPoints.style.display = "none";
 }
 
 buyAutoPoints.addEventListener("click", purchaseAutoPoints)
@@ -81,6 +86,7 @@ function upgradeClicks(){
         starterValue = starterValue - clicksPrice
         clicksPrice = clicksPrice *= 1.75;
         moreClicksPrice.innerText = "Price: " + parseInt(clicksPrice);
+        moreClicks.innerText = "Click Multiplier: " + (multiplier + 0.25) + "x";
         valueIndicator.innerText = "Points: " + parseInt(starterValue);
         multiplierIndicator.innerText = "Click Multiplier: " + multiplier + "x";
 

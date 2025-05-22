@@ -106,6 +106,15 @@ main{
   cursor: pointer;
 }
 
+.purchaseButton:hover{
+  background-color: rgb(0, 240, 0);
+}
+
+.purchaseButton:active{
+  transform: scale(0.925);
+  transition: .1s;
+}
+
 .center-panel{
   background-color: khaki;
   display: grid;
@@ -114,7 +123,7 @@ main{
 
 .top-center-panel{
   display: grid;
-  grid-template-rows: 75px 0px;
+  grid-template-rows: 50px 0px;
   margin-top: 150px;
   justify-content: center;
   align-items: center;
@@ -148,6 +157,7 @@ main{
   transform: scale(100%);
   transition: .25s;
 }
+
 
 .right-panel{
   background-color: brown;

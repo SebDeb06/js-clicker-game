@@ -15,6 +15,7 @@ const moreClicksButton = document.getElementById("moreClicksPurchase");
 const moreClicksPrice = document.getElementById("moreClicksPrice");
 const moreClicks = document.getElementById("moreClicks");
 
+// Values
 let starterValue = 0;
 let multiplier = 1;
 let clickAmount = 1;
@@ -23,6 +24,17 @@ let clickAmount = 1;
 let autoPointsStatus = false;
 let autoPointIsPurchased = false;
 
+let APIntervalTime = 1000;
+
+//Get point when clicking
+function GetPoint(){
+    starterValue += clickAmount * multiplier;
+    valueIndicator.innerText = "Points: " + parseInt(starterValue);
+}
+
+clickButton.addEventListener("click", GetPoint)
+
+//Turn on/off auto points
 function autoPointsED(){
 
     function addPoints(){
@@ -43,11 +55,12 @@ function autoPointsED(){
         autoPointsStatus = true
         autoPoints.innerText = "Auto Points: On";
         autoPoints.style.backgroundColor = "rgb(0, 255, 0)"
-        autoPointInterval = setInterval(addPoints, 1000)
+        autoPointInterval = setInterval(addPoints, APIntervalTime)
     }
 
 }
 
+//Purchase auto points
 function purchaseAutoPoints(){
     if(starterValue >= 50){
         autoPointIsPurchased = true;
@@ -65,21 +78,14 @@ function purchaseAutoPoints(){
     }
 }
 
+//Checks if player has Auto Points
 if(autoPointIsPurchased == false){
     autoPoints.style.display = "none";
 }
 
 buyAutoPoints.addEventListener("click", purchaseAutoPoints)
 
-
-//Autopoints section end
-
-function GetPoint(){
-    starterValue += clickAmount * multiplier;
-    valueIndicator.innerText = "Points: " + parseInt(starterValue);
-}
-
-clickButton.addEventListener("click", GetPoint)
+//Upgrade clicks section
 
 let clicksPrice = 10;
 
@@ -100,4 +106,3 @@ function upgradeClicks(){
 }
 
 moreClicksButton.addEventListener("click", upgradeClicks)
-

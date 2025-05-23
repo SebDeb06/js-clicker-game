@@ -35,12 +35,14 @@ function autoPointsED(){
     if (autoPointsStatus == true ){
         autoPointsStatus = false
         autoPoints.innerText = "Auto Points: Off";
+        autoPoints.style.backgroundColor = "rgb(255, 0, 0)"
         clearInterval(autoPointInterval)
     }
 
     else if(autoPointsStatus == false){
         autoPointsStatus = true
         autoPoints.innerText = "Auto Points: On";
+        autoPoints.style.backgroundColor = "rgb(0, 255, 0)"
         autoPointInterval = setInterval(addPoints, 1000)
     }
 
@@ -55,6 +57,7 @@ function purchaseAutoPoints(){
         if(autoPointIsPurchased == true){
             autoPoints.addEventListener("click", autoPointsED)
             autoPoints.style.display = "inherit";
+            autoPoints.style.backgroundColor = "rgb(255, 0, 0)"
         }
     }
     else{

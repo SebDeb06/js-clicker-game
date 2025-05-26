@@ -3,9 +3,6 @@ const clickButton = document.getElementById("ClickButton");
 const valueIndicator = document.getElementById("valueIndicator");
 const multiplierIndicator = document.getElementById("multiplierIndicator");
 
-// Get point button
-const clickToEarn = document.getElementById("clickToEarn");
-
 // Auto points
 const autoPoints = document.getElementById("autoPoints");
 const buyAutoPoints = document.getElementById("buyAutoPoints");
@@ -14,6 +11,8 @@ const buyAutoPoints = document.getElementById("buyAutoPoints");
 const moreClicksButton = document.getElementById("moreClicksPurchase");
 const moreClicksPrice = document.getElementById("moreClicksPrice");
 const moreClicks = document.getElementById("moreClicks");
+const UpgradeAP = document.getElementById("UpgradeAP");
+const UpdateAPprice = document.getElementById("UpdateAPprice");
 
 // Values
 let starterValue = 0;
@@ -71,6 +70,7 @@ function purchaseAutoPoints(){
             autoPoints.addEventListener("click", autoPointsED)
             autoPoints.style.display = "inherit";
             autoPoints.style.backgroundColor = "rgb(255, 0, 0)"
+            UpgradeAP.style.display = "inherit";
         }
     }
     else{
@@ -90,19 +90,48 @@ buyAutoPoints.addEventListener("click", purchaseAutoPoints)
 let clicksPrice = 10;
 
 function upgradeClicks(){
-    if(starterValue >= clicksPrice){
-        multiplier += 0.25;
-        starterValue = starterValue - clicksPrice
-        clicksPrice = clicksPrice *= 1.75;
-        moreClicksPrice.innerText = "Price: " + parseInt(clicksPrice);
-        moreClicks.innerText = "Click Multiplier: " + (multiplier + 0.25) + "x";
-        valueIndicator.innerText = "Points: " + parseInt(starterValue);
-        multiplierIndicator.innerText = "Click Multiplier: " + multiplier + "x";
+    if(multiplier < 10){
+        if(starterValue >= clicksPrice){
+            multiplier += 0.25;
+            starterValue = starterValue - clicksPrice
+            clicksPrice = clicksPrice *= 1.35 / 1.04;
+            moreClicksPrice.innerText = "Price: " + parseInt(clicksPrice) + " Points";
+            moreClicks.innerText = "Click Multiplier: " + (multiplier + 0.25) + "x";
+            valueIndicator.innerText = "Points: " + parseInt(starterValue);
+            multiplierIndicator.innerText = "Click Multiplier: " + multiplier + "x";
 
+        }
+        else{
+            console.log("not enough points")
+        }
     }
     else{
-        console.log("not enough points")
+        console.log("You've max upgraded your clicks!");
+        moreClicks.innerText = "MAX UPGRADED";
+        moreClicksPrice.style.display = "none";
     }
 }
 
 moreClicksButton.addEventListener("click", upgradeClicks)
+
+//Decrease Interval Time on Auto Points
+
+let intervalPrice = 100;
+
+function decreaseAutoPointsInterval(){
+    if(APIntervalTime > 0){
+        if(starterValue >= intervalPrice){
+            starterValue = starterValue - intervalPrice;
+            APIntervalTime = APIntervalTime - 100
+            intervalPrice = intervalPrice * 1.35 / 1.03;
+            valueIndicator.innerText = "Points: " + parseInt(starterValue);
+            UpdateAPprice.innerText = "Price: " + parseInt(intervalPrice) + " Points"
+        }
+    }
+    else{
+        console.log("You can't upgrade more than you have!")
+        UpdateAPprice.innerText = "MAX UPGRADE"
+    }
+}
+
+UpgradeAP.addEventListener("click", decreaseAutoPointsInterval)

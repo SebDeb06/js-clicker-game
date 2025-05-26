@@ -72,7 +72,7 @@ main{
 }
 
 .upgrades-wrapper{
-  width: 90%;
+  width: 95%;
   height: 95%;
   background-color: darkblue;
   display: flex;
@@ -82,15 +82,17 @@ main{
 }
 
 .upgrade-style{
-  width: 95%;
-  height: 90px;
+  width: 100%;
+  height: 120px;
   background-color: grey;
   border: solid black;
   border-radius: 10px;
-  display: grid;
-  text-align: center;
-  grid-template-rows: 25% 25% auto;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
   align-items: center;
+  text-align: top;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -100,8 +102,7 @@ main{
   font-size: large;
   font-weight: 600;
   width: 90%;
-  margin-left: 5%;
-  height: 85%;
+  height: 40%;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -155,6 +156,7 @@ main{
   font-weight: 500;
   font-size: large;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .autoPoints:hover{
@@ -168,13 +170,32 @@ main{
   transition: .15s;
 }
 
+.UpgradeAP{
+  width: 100%;
+  margin-top: 5%;
+  height: 70%;
+  display: none;
+  border-radius: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+
+.UpgradeAP:hover{
+  transform: scale(1.025);
+  transition: .25s;
+  border-bottom: solid black;
+}
+
 
 .buyAutoPoints{
   margin-left: 5%;
   margin-top: 5%;
   width: 90%;
   height: 50%;
+  border-radius: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
 }
 
 .ClickButton{
@@ -194,6 +215,11 @@ main{
 .ClickButton:not(:hover){
   transform: scale(100%);
   transition: .25s;
+}
+
+.ClickButton:active{
+  transform: scale(1);
+  transition: .05s;
 }
 
 

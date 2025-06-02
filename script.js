@@ -16,7 +16,7 @@ const UpgradeAP = document.getElementById("UpgradeAP");
 const UpdateAPprice = document.getElementById("UpdateAPprice");
 
 // Values
-let starterValue = 0;
+let starterValue = 5345345434;
 let multiplier = 1;
 let clickAmount = 1;
 
@@ -118,19 +118,25 @@ moreClicksButton.addEventListener("click", upgradeClicks)
 //Decrease Interval Time on Auto Points
 
 let intervalPrice = 100;
+let APpurchases = 0;
 
 function decreaseAutoPointsInterval(){
-    if(APIntervalTime >= 0){
+    if(APIntervalTime > 0){
         if(starterValue >= intervalPrice){
             starterValue = starterValue - intervalPrice;
             APIntervalTime = APIntervalTime - 100
-            intervalPrice = intervalPrice * 1.35 / 1.03;
+            APpurchases += 1;
+            intervalPrice = intervalPrice * APpurchases;
             valueIndicator.innerText = "Points: " + parseInt(starterValue);
             UpdateAPprice.innerText = "Price: " + parseInt(intervalPrice) + " Points";
             APIntervalIndicator.innerText = parseInt(APIntervalTime) + "ms";
+            if(APIntervalTime == 0){
+                console.log("You can't upgrade more than you have!")
+                UpdateAPprice.innerText = "MAX UPGRADE"
+            }
         }
     }
-    else{
+    else if(APIntervalTime <= 0){
         console.log("You can't upgrade more than you have!")
         UpdateAPprice.innerText = "MAX UPGRADE"
     }

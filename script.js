@@ -132,13 +132,13 @@ function decreaseAutoPointsInterval(){
             APIntervalIndicator.innerText = parseInt(APIntervalTime) + "ms";
             if(APIntervalTime == 0){
                 console.log("You can't upgrade more than you have!")
-                UpdateAPprice.innerText = "MAX UPGRADE"
+                UpdateAPprice.innerText = "MAX UPGRADED"
             }
         }
     }
     else if(APIntervalTime <= 0){
         console.log("You can't upgrade more than you have!")
-        UpdateAPprice.innerText = "MAX UPGRADE"
+        UpdateAPprice.innerText = "MAX UPGRADED"
     }
 }
 

@@ -2,6 +2,7 @@
 const clickButton = document.getElementById("ClickButton");
 const valueIndicator = document.getElementById("valueIndicator");
 const multiplierIndicator = document.getElementById("multiplierIndicator");
+const APIntervalIndicator = document.getElementById("APIntervalIndicator");
 
 // Auto points
 const autoPoints = document.getElementById("autoPoints");
@@ -119,13 +120,14 @@ moreClicksButton.addEventListener("click", upgradeClicks)
 let intervalPrice = 100;
 
 function decreaseAutoPointsInterval(){
-    if(APIntervalTime > 0){
+    if(APIntervalTime >= 0){
         if(starterValue >= intervalPrice){
             starterValue = starterValue - intervalPrice;
             APIntervalTime = APIntervalTime - 100
             intervalPrice = intervalPrice * 1.35 / 1.03;
             valueIndicator.innerText = "Points: " + parseInt(starterValue);
-            UpdateAPprice.innerText = "Price: " + parseInt(intervalPrice) + " Points"
+            UpdateAPprice.innerText = "Price: " + parseInt(intervalPrice) + " Points";
+            APIntervalIndicator.innerText = parseInt(APIntervalTime) + "ms";
         }
     }
     else{

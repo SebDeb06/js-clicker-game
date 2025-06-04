@@ -106,7 +106,7 @@ function upgradeClicks(){
             console.log("not enough points")
         }
     }
-    else{
+    else if(multiplier >= 10){
         console.log("You've max upgraded your clicks!");
         moreClicks.innerText = "MAX UPGRADED";
         moreClicksPrice.style.display = "none";
